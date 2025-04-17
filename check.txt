@@ -1,0 +1,434 @@
+You are now connected to database "good_gym" as user "lloyd".
+            List of relations
+ Schema |      Name       | Type  | Owner 
+--------+-----------------+-------+-------
+ public | categories      | table | lloyd
+ public | cities          | table | lloyd
+ public | event_attendees | table | lloyd
+ public | events          | table | lloyd
+ public | users           | table | lloyd
+(5 rows)
+
+ category_id | category_name  |                                                                                                                                                                                                  category_img                                                                                                                                                                                                  
+-------------+----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+           1 | Litter Picking | https://sustainability.leeds.ac.uk/wp-content/uploads/sites/106/2024/03/LUJH-63.jpg
+           2 | Gardening      | https://cdn.hosted-assets.com/nourishingneighbors/ul/q_auto/9DEY071R/c89e77/c89e77-iStock-1364679535.jpg
+           3 | Cleaning       | https://www.southernliving.com/thmb/Bmo7YUcJC4EORS-pdWD93mvxeZk=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-12174006911-4ed8b844da3e452eac177ab2e7962d3d.jpg
+           4 | Painting       | https://now.uiowa.edu/sites/now.uiowa.edu/files/2023-04/Mike-Stenerson-1.jpg
+           5 | Food bank      | https://www.bigissue.com/wp-content/uploads/2022/09/P1190298-scaled.jpg
+           6 | Group run      | https://www.goodgym.org/assets/home/group-run@2x-97b58fa1e949c310dffb9170921126afb2f64c3090127bde8e154563e705a7a4.jpg
+           7 | Social         | https://scontent-lhr8-2.xx.fbcdn.net/v/t39.30808-6/480494854_1027327399428248_5071426012996742058_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=iWbBLY1sx7MQ7kNvgFfkwYl&_nc_oc=AdlEJMFlbBCeDh2krNHSbIfJKC1VRVMruzq0X7TMiWAbwGqtg7YkwYZrCKvwefaBfMxxprCJBxsd81u3G8vXJEOS&_nc_zt=23&_nc_ht=scontent-lhr8-2.xx&_nc_gid=Mz9EZdAYHZ1eayZtZKFiow&oh=00_AYHOzilGal5jnrtEFLj0qq1s4GnxZv3h44rmAbigyHLcpg&oe=67EA5D5C
+(7 rows)
+
+ city_id | city_name  
+---------+------------
+       1 | Leeds
+       2 | Manchester
+       3 | Newcastle
+       4 | Liverpool
+       5 | Bristol
+       6 | Birmingham
+       7 | Brighton
+       8 | Glasgow
+       9 | London
+      10 | Cardiff
+(10 rows)
+
+ event_id | city_id |             title              | category_id |    date    | postcode |                                     description                                     
+----------+---------+--------------------------------+-------------+------------+----------+-------------------------------------------------------------------------------------
+        1 |       3 | Riverbank Litter Patrol        |           1 | 2025-01-04 | NE3 1AB  | Join our team to clean up litter along the local riverbank.
+        2 |       1 | Community Garden Bloom-Up      |           2 | 2025-01-07 | LS2 5HQ  | Plant flowers and vegetables in our local community garden.
+        3 |       4 | School Grounds Deep Clean      |           3 | 2025-01-09 | BS1 6JK  | Help deep clean the school grounds for a healthier environment.
+        4 |       5 | Youth Club Painting Day        |           4 | 2025-01-10 | B10 4TH  | Refresh the youth club with a new coat of paint.
+        5 |       2 | Food Bank Inventory Day        |           5 | 2025-01-12 | M3 5RT   | Sort and stock food items for the community food bank.
+        6 |       6 | Charity Run for Awareness      |           6 | 2025-01-13 | L1 2XY   | Join a friendly group run to promote local charity initiatives.
+        7 |       7 | Winter Community Social        |           7 | 2025-01-14 | S2 8HU   | Help host a cozy social night with games and food.
+        8 |       8 | Urban Street Cleanup           |           1 | 2025-01-15 | CF10 1AA | Pick up litter and make our city streets shine.
+        9 |       9 | Senior Home Garden Support     |           2 | 2025-01-17 | EH1 3TH  | Assist seniors in maintaining their community garden.
+       10 |      10 | Community Center Cleanup Blitz |           3 | 2025-01-19 | G1 2QH   | Join the blitz to deep clean the community center.
+       11 |       1 | Local Park Bench Painting      |           4 | 2025-01-20 | LS3 1AA  | Add color to the park by repainting benches and railings.
+       12 |       2 | Food Box Packing Night         |           5 | 2025-01-22 | M2 4RR   | Help pack and label food boxes for families in need.
+       13 |       3 | Weekend Group Jog              |           6 | 2025-01-23 | NE1 4ED  | Enjoy a healthy jog with fellow community members.
+       14 |       4 | Valentine's Social Bash        |           7 | 2025-02-14 | BS2 7LX  | Celebrate community love with a Valentine's-themed event.
+       15 |       5 | Forest Trail Litter Sweep      |           1 | 2025-02-16 | B15 2TT  | Remove waste along our beautiful forest trails.
+       16 |       6 | Spring Flower Planting         |           2 | 2025-02-18 | L3 5YU   | Brighten the neighborhood with spring flower planting.
+       17 |       7 | Community Hall Sanitation Day  |           3 | 2025-02-19 | S10 2JH  | Join a day of thorough cleaning of our community hall.
+       18 |       8 | Arts Center Painting Help      |           4 | 2025-02-20 | CF24 3AA | Help revamp the arts center with a paint refresh.
+       19 |       9 | Emergency Food Drive Sort      |           5 | 2025-02-22 | EH2 1JL  | Sort food drive donations for quick community distribution.
+       20 |      10 | Morning Social Coffee & Chat   |           7 | 2025-02-24 | G2 3AX   | Meet and greet neighbors with a hot drink and snacks.
+       21 |       1 | Nature Trail Cleanup           |           1 | 2025-02-26 | LS5 9EH  | Clean up trash along local walking trails and nature paths.
+       22 |       2 | Vegetable Patch Day            |           2 | 2025-02-28 | M8 9FN   | Work on a shared vegetable patch with other volunteers.
+       23 |       3 | Local Library Dust-Off         |           3 | 2025-03-01 | NE5 3PL  | Dust and clean up the local library’s reading corners.
+       24 |       4 | Primary School Paint Project   |           4 | 2025-03-03 | BS5 8DD  | Paint murals and classrooms in the local primary school.
+       25 |       5 | Food Donation Sorting Sprint   |           5 | 2025-03-04 | B9 4TX   | Join a fast-paced shift to sort incoming food donations.
+       26 |       6 | Run & Deliver                  |           6 | 2025-03-05 | L7 8AA   | Run as a group to deliver community event flyers.
+       27 |       7 | Spring Social Fiesta           |           7 | 2025-03-06 | S6 4BF   | Celebrate the start of spring with games, food, and music.
+       28 |       8 | Beachfront Litter Hunt         |           1 | 2025-03-08 | CF11 0JN | Remove trash from the beachfront and enjoy the views.
+       29 |       9 | Planting for Pollinators       |           2 | 2025-03-10 | EH3 6SD  | Create a haven for bees and butterflies with new plants.
+       30 |      10 | Community Kitchen Scrub-Up     |           3 | 2025-03-12 | G4 0RA   | Help clean and sanitize the community kitchen area.
+       31 |       1 | Shelter Painting Support       |           4 | 2025-03-14 | LS7 3JH  | Brighten up the local shelter with a painting project.
+       32 |       2 | Sort & Store Day               |           5 | 2025-03-15 | M1 7AR   | Organize and restock the food storage room.
+       33 |       3 | Run to Connect                 |           6 | 2025-03-16 | NE6 5BH  | Run while connecting with new people in your area.
+       34 |       4 | Game Night Social              |           7 | 2025-03-17 | BS4 1NX  | Join us for board games and laughs at our community space.
+       35 |       5 | City Park Litter Sweep         |           1 | 2025-03-18 | B6 6RW   | Sweep through the city park to clear out debris and litter.
+       36 |       6 | Planters and Pots Day          |           2 | 2025-03-20 | L6 3YA   | Refresh and decorate public planters with new greenery.
+       37 |       7 | Library Cleaning Crew          |           3 | 2025-03-22 | S9 4ZP   | Help clean dusty shelves and reading areas in the library.
+       38 |       8 | Paint the Pavilion             |           4 | 2025-03-24 | CF14 4UA | Lend a brush to repaint our beloved park pavilion.
+       39 |       9 | Inventory Assist Shift         |           5 | 2025-03-26 | EH4 2PT  | Help take stock of food supplies at our donation center.
+       40 |      10 | Fun Run Friday                 |           6 | 2025-03-28 | G5 0EN   | Cap off the week with a fun and friendly group run.
+       41 |       1 | Community Karaoke Social       |           7 | 2025-03-29 | LS4 2EZ  | Sing your heart out at our open mic karaoke social!
+       42 |       2 | Nature Reserve Cleanup         |           1 | 2025-03-30 | M6 8HH   | Preserve nature by removing litter from the reserve.
+       43 |       3 | Seasonal Veg Planting Day      |           2 | 2025-04-01 | NE8 3LN  | Get your hands dirty planting fresh seasonal vegetables.
+       44 |       4 | Clean the Green                |           3 | 2025-04-03 | BS6 5ST  | Help clean up the green space behind the town hall.
+       45 |       5 | Mural Painting Workshop        |           4 | 2025-04-04 | B18 7AA  | Create colorful murals to inspire the community.
+       46 |       6 | Food Shelf Reorganization      |           5 | 2025-04-05 | L8 6SA   | Reorganize community food shelf supplies for easy access.
+       47 |       7 | Sunset Jog for Wellness        |           6 | 2025-04-07 | S4 8BJ   | Join a sunset jog to unwind and promote well-being.
+       48 |       8 | Spring Social Mixer            |           7 | 2025-04-08 | CF23 5PG | Mix and mingle with neighbors at our spring social!
+       49 |       6 | Canal Litter Sweep             |           1 | 2025-05-02 | B1 2AA   | Join volunteers in removing litter from the local canal to support clean waterways.
+       50 |       8 | Senior Centre Garden Revamp    |           2 | 2025-06-10 | L1 8BN   | Help us refresh the senior centre's garden by planting flowers and trimming hedges.
+(50 rows)
+
+ user_id |         user_name          |                                   avatar                                   |           email            |      password      | is_admin 
+---------+----------------------------+----------------------------------------------------------------------------+----------------------------+--------------------+----------
+       1 | Homer Simpson              | https://upload.wikimedia.org/wikipedia/en/0/02/Homer_Simpson_2006.png      | homer.simpson@example.com  | donuts123          | t
+       2 | Marge Simpson              | https://upload.wikimedia.org/wikipedia/en/0/0b/Marge_Simpson.png           | marge.simpson@example.com  | bluehair456        | t
+       3 | Bart Simpson               | https://upload.wikimedia.org/wikipedia/en/a/aa/Bart_Simpson_200px.png      | bart.simpson@example.com   | eatmypants         | f
+       4 | Lisa Simpson               | https://upload.wikimedia.org/wikipedia/en/e/ec/Lisa_Simpson.png            | lisa.simpson@example.com   | saxophone789       | f
+       5 | Maggie Simpson             | https://upload.wikimedia.org/wikipedia/en/9/9d/Maggie_Simpson.png          | maggie.simpson@example.com | pacifier321        | f
+       6 | Ned Flanders               | https://upload.wikimedia.org/wikipedia/en/8/84/Ned_Flanders.png            | ned.flanders@example.com   | hallelujah777      | f
+       7 | Mr. Burns                  | https://upload.wikimedia.org/wikipedia/en/5/56/Mr_Burns.png                | mr.burns@example.com       | excellent123       | t
+       8 | Krusty the Clown           | https://upload.wikimedia.org/wikipedia/en/3/3a/Krustytheclown.png          | krusty.clown@example.com   | clownlife456       | f
+       9 | Milhouse Van Houten        | https://upload.wikimedia.org/wikipedia/en/6/6f/Milhouse_Van_Houten.png     | milhouse.vh@example.com    | radical789         | f
+      10 | Chief Wiggum               | https://upload.wikimedia.org/wikipedia/en/0/0d/Chief_Wiggum.png            | chief.wiggum@example.com   | donutsforever      | f
+      11 | Apu Nahasapeemapetilon     | https://upload.wikimedia.org/wikipedia/en/1/14/Apu_Nahasapeemapetilon.png  | apu@example.com            | kwikemart123       | f
+      12 | Seymour Skinner            | https://upload.wikimedia.org/wikipedia/en/3/3e/Seymour_Skinner.png         | skinner@example.com        | steamedhams        | f
+      13 | Edna Krabappel             | https://upload.wikimedia.org/wikipedia/en/2/23/Edna_Krabappel.png          | edna@example.com           | detention4life     | f
+      14 | Waylon Smithers            | https://upload.wikimedia.org/wikipedia/en/8/88/Waylon_Smithers_2010.png    | smithers@example.com       | burnsyforever      | f
+      15 | Moe Szyslak                | https://upload.wikimedia.org/wikipedia/en/6/60/Moe_Szyslak.png             | moe@example.com            | barfly42           | f
+      16 | Barney Gumble              | https://upload.wikimedia.org/wikipedia/en/f/fc/Barney_Gumble.png           | barney@example.com         | burrrrp            | f
+      17 | Ralph Wiggum               | https://upload.wikimedia.org/wikipedia/en/1/14/Ralph_Wiggum.png            | ralph@example.com          | imlearned          | f
+      18 | Comic Book Guy             | https://upload.wikimedia.org/wikipedia/en/5/5a/Comicbookguy.png            | cbg@example.com            | worstepisodeever   | f
+      19 | Nelson Muntz               | https://upload.wikimedia.org/wikipedia/en/c/c6/Nelson_Muntz.png            | nelson@example.com         | haaha123           | f
+      20 | Lenny Leonard              | https://upload.wikimedia.org/wikipedia/en/e/e0/Lenny_Leonard.png           | lenny@example.com          | powerplant1        | f
+      21 | Carl Carlson               | https://upload.wikimedia.org/wikipedia/en/6/60/Carl_Carlson.png            | carl@example.com           | powerplant2        | f
+      22 | Troy McClure               | https://upload.wikimedia.org/wikipedia/en/6/68/Troy_McClure.png            | troy@example.com           | youmightrememberme | t
+      23 | Reverend Lovejoy           | https://upload.wikimedia.org/wikipedia/en/f/fb/Reverend_Lovejoy.png        | lovejoy@example.com        | pray123            | f
+      24 | Helen Lovejoy              | https://upload.wikimedia.org/wikipedia/en/e/e5/Helen_Lovejoy.png           | helen@example.com          | thinkofthechildren | f
+      25 | Dr. Hibbert                | https://upload.wikimedia.org/wikipedia/en/d/d5/Julius_Hibbert.png          | drhibbert@example.com      | hahahealth         | f
+      26 | Kent Brockman              | https://upload.wikimedia.org/wikipedia/en/b/bd/Kent_Brockman.png           | kent@example.com           | newsflash          | f
+      27 | Groundskeeper Willie       | https://upload.wikimedia.org/wikipedia/en/3/3b/GroundskeeperWillie.png     | willie@example.com         | aye123             | f
+      28 | Selma Bouvier              | https://upload.wikimedia.org/wikipedia/en/b/bc/Selma_Bouvier.png           | selma@example.com          | macgyverfan        | f
+      29 | Patty Bouvier              | https://upload.wikimedia.org/wikipedia/en/1/12/Patty_Bouvier.png           | patty@example.com          | smokyvoice         | f
+      30 | Sideshow Bob               | https://upload.wikimedia.org/wikipedia/en/1/16/Sideshow_Bob.png            | sideshowbob@example.com    | revengebart        | f
+      31 | Mayor Quimby               | https://upload.wikimedia.org/wikipedia/en/7/73/Mayor_Quimby.png            | quimby@example.com         | voteforme          | t
+      32 | Snake Jailbird             | https://upload.wikimedia.org/wikipedia/en/b/b2/Snake_Jailbird.png          | snake@example.com          | yessssman          | f
+      33 | Duffman                    | https://upload.wikimedia.org/wikipedia/en/6/68/Duffman.png                 | duffman@example.com        | ohyeah             | f
+      34 | Itchy                      | https://upload.wikimedia.org/wikipedia/en/7/79/Itchy.png                   | itchy@example.com          | mousemayhem        | f
+      35 | Scratchy                   | https://upload.wikimedia.org/wikipedia/en/f/f3/Scratchy.png                | scratchy@example.com       | catrevenge         | f
+      36 | Martin Prince              | https://upload.wikimedia.org/wikipedia/en/4/44/Martin_Prince.png           | martin@example.com         | studysquad         | f
+      37 | Uter Zörker                | https://static.simpsonswiki.com/images/0/03/Uter_Zorker.png                | uter@example.com           | chocolate123       | f
+      38 | Jasper Beardly             | https://upload.wikimedia.org/wikipedia/en/7/72/Jasper_Beardly.png          | jasper@example.com         | oldmanbeard        | f
+      39 | Hans Moleman               | https://upload.wikimedia.org/wikipedia/en/0/02/Hans_Moleman.png            | hans@example.com           | owmyeye            | f
+      40 | Sherri Macelroy            | https://static.simpsonswiki.com/images/1/12/Sherri.png                     | sherri@example.com         | twins1             | f
+      41 | Terri Macelroy             | https://static.simpsonswiki.com/images/0/01/Terri.png                      | terri@example.com          | twins2             | f
+      42 | Kearney Zzyzwicz           | https://static.simpsonswiki.com/images/1/1b/Kearney_Zzyzwicz.png           | kearney@example.com        | dropout            | f
+      43 | Jimbo Jones                | https://static.simpsonswiki.com/images/d/d1/Jimbo_Jones.png                | jimbo@example.com          | bullylife          | f
+      44 | Lou the Cop                | https://static.simpsonswiki.com/images/2/2b/Lou.png                        | lou@example.com            | partnerwiggum      | t
+      45 | Dr. Nick Riviera           | https://upload.wikimedia.org/wikipedia/en/4/4b/Dr._Nick_Riviera.png        | drnick@example.com         | hibbertwho         | f
+      46 | Arnie Pye                  | https://upload.wikimedia.org/wikipedia/en/8/88/Arnie_Pye.png               | arnie@example.com          | chopperreport      | f
+      47 | Bumblebee Man              | https://upload.wikimedia.org/wikipedia/en/c/cb/Bumblebee_Man.png           | bumblebee@example.com      | aycaramba          | f
+      48 | Mrs. Hoover                | https://static.simpsonswiki.com/images/d/d1/Elizabeth_Hoover.png           | mrs.hoover@example.com     | fourthgrade        | f
+      49 | Manjula Nahasapeemapetilon | https://static.simpsonswiki.com/images/4/4f/Manjula_Nahasapeemapetilon.png | manjula@example.com        | octuplets          | f
+      50 | Gil Gunderson              | https://static.simpsonswiki.com/images/2/2d/Gil_Gunderson.png              | gil@example.com            | justonebreak       | f
+(50 rows)
+
+ event_id | user_id 
+----------+---------
+        1 |      50
+        1 |      15
+        1 |      38
+        1 |       7
+        1 |      16
+        1 |       3
+        1 |      25
+        1 |      39
+        1 |      12
+        2 |      44
+        2 |       1
+        2 |      23
+        2 |      38
+        2 |      39
+        2 |      42
+        2 |      13
+        2 |      28
+        2 |      24
+        2 |      26
+        3 |       6
+        3 |      17
+        3 |      19
+        3 |      32
+        3 |      49
+        3 |       9
+        4 |      13
+        4 |      33
+        4 |      47
+        4 |      48
+        5 |      23
+        5 |      31
+        5 |      35
+        5 |      14
+        5 |      21
+        5 |       4
+        6 |       6
+        6 |      25
+        6 |      50
+        6 |      45
+        7 |      34
+        7 |      24
+        7 |      22
+        7 |      14
+        8 |      27
+        8 |       8
+        8 |      45
+        8 |       6
+        8 |      42
+        9 |      21
+        9 |      43
+        9 |      48
+        9 |      30
+        9 |       9
+        9 |      25
+        9 |       2
+       10 |       6
+       10 |      41
+       10 |      35
+       10 |      36
+       11 |       2
+       11 |      29
+       11 |       6
+       11 |      11
+       11 |      10
+       11 |      32
+       12 |      45
+       12 |      36
+       12 |      17
+       12 |      31
+       12 |       9
+       12 |      33
+       12 |      41
+       13 |      33
+       13 |      26
+       13 |      48
+       13 |       1
+       14 |      36
+       14 |      35
+       14 |      47
+       14 |      23
+       14 |      40
+       14 |      25
+       15 |      32
+       15 |      17
+       15 |      44
+       15 |       2
+       16 |      37
+       16 |      21
+       16 |       6
+       17 |      27
+       17 |      13
+       17 |      29
+       17 |      18
+       17 |      31
+       17 |      30
+       17 |      12
+       18 |      49
+       18 |      10
+       18 |       7
+       19 |      30
+       19 |      31
+       19 |      38
+       19 |      40
+       20 |      32
+       20 |      29
+       20 |      47
+       21 |       2
+       21 |      19
+       21 |      43
+       21 |      21
+       22 |       3
+       22 |      50
+       22 |       7
+       22 |      34
+       22 |       6
+       22 |      23
+       23 |      32
+       23 |       5
+       23 |      37
+       23 |      48
+       23 |      13
+       23 |      19
+       23 |      26
+       24 |       6
+       24 |       8
+       24 |      23
+       24 |      16
+       24 |      24
+       24 |      43
+       25 |      30
+       25 |       2
+       25 |      36
+       25 |      16
+       26 |      47
+       26 |      14
+       26 |      27
+       26 |      21
+       26 |      49
+       26 |      17
+       26 |      41
+       26 |      32
+       26 |      10
+       27 |      10
+       27 |      20
+       27 |      43
+       27 |      17
+       27 |       8
+       27 |      28
+       27 |      40
+       27 |      24
+       28 |      44
+       28 |      14
+       28 |      31
+       28 |      34
+       28 |      42
+       28 |      12
+       29 |      20
+       29 |       7
+       29 |      33
+       29 |      35
+       29 |      47
+       29 |       5
+       29 |      12
+       30 |      27
+       30 |      24
+       30 |      18
+       30 |      48
+       31 |      10
+       31 |      15
+       31 |      22
+       31 |      29
+       31 |      12
+       31 |      39
+       32 |      46
+       32 |       4
+       32 |       2
+       32 |      25
+       32 |      19
+       32 |      23
+       33 |      27
+       33 |       1
+       33 |       5
+       33 |      31
+       33 |      12
+       33 |      14
+       33 |      10
+       34 |      42
+       34 |      23
+       34 |      17
+       34 |      37
+       35 |      24
+       35 |       9
+       35 |      41
+       35 |      43
+       35 |      31
+       35 |      19
+       35 |       2
+       36 |      35
+       36 |      16
+       36 |      21
+       36 |      29
+       36 |       6
+       36 |      34
+       36 |      33
+       36 |      38
+       37 |      43
+       37 |      28
+       37 |       7
+       37 |      50
+       37 |      27
+       37 |      30
+       37 |      41
+       38 |      13
+       38 |      44
+       38 |       3
+       38 |      10
+       38 |      14
+       38 |       8
+       38 |      18
+       38 |       2
+       39 |      11
+       39 |      21
+       39 |      31
+       39 |      24
+       40 |      20
+       40 |      16
+       40 |      17
+       40 |      22
+       40 |      26
+       40 |      39
+       41 |      14
+       41 |      15
+       41 |       7
+       41 |       2
+       41 |      22
+       42 |      37
+       42 |      20
+       42 |      45
+       42 |      48
+       42 |       8
+       43 |      11
+       43 |       6
+       43 |      18
+       43 |      10
+       43 |      47
+       43 |      21
+       44 |       9
+       44 |       7
+       44 |      19
+       44 |      41
+       44 |      17
+       44 |      26
+       45 |      22
+       45 |      30
+       45 |      10
+       45 |      46
+       46 |      35
+       46 |       4
+       46 |      21
+       46 |      48
+       47 |      30
+       47 |       4
+       47 |      18
+       47 |      17
+       47 |      36
+       47 |       2
+       47 |       1
+       48 |      29
+       48 |      12
+       48 |      25
+       48 |       9
+       48 |      28
+       48 |      50
+       48 |      13
+       49 |      28
+       49 |      40
+       49 |      44
+       49 |      22
+       49 |      46
+       49 |      20
+       49 |      39
+       50 |       7
+       50 |      15
+       50 |      34
+       50 |      37
+       50 |      14
+(286 rows)
+

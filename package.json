@@ -1,0 +1,39 @@
+{
+  "name": "goodgymclone_be",
+  "version": "1.0.0",
+  "main": "listen.js",
+  "scripts": {
+    "setup-dbs": "psql -f ./db/setup.sql",
+    "seed": "node ./db/seeds/run-seed.js",
+    "test": "NODE_ENV=dev jest",
+    "check": "psql -f check.sql > check.txt",
+    "start": "node listen.js",
+    "seed-prod": "NODE_ENV=production npm run seed"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "jest-extended": "^4.0.2",
+    "jest-sorted": "^1.0.15",
+    "nodemon": "^3.1.9",
+    "supertest": "^7.0.0"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "node": "^20.19.0",
+    "pg": "^8.14.0",
+    "pg-format": "^1.0.4"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "setupFilesAfterEnv": [
+      "jest-extended/all",
+      "jest-sorted"
+    ]
+  },
+  "description": ""
+}

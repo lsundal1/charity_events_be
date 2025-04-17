@@ -1,0 +1,5 @@
+DROP DATABASE IF EXISTS good_gym_test;
+DROP DATABASE IF EXISTS good_gym;
+
+CREATE DATABASE good_gym_test;
+CREATE DATABASE good_gym;

@@ -1,0 +1,309 @@
+{
+    "GET /api": {
+        "description": "serves up a json representation of all the available endpoints of the api"
+    },
+    "GET /api/cities": {
+        "description": "serves up an array of all cities",
+        "queries": [],
+        "exampleResponse": {
+            "cities": [
+                { "city_id":1, "name": "Leeds" }, 
+                { "city_id":2, "name": "Manchester" }, 
+                { "city_id":3, "name": "Newcastle" }
+            ]
+        }
+    },
+    "GET /api/categories": {
+        "description": "serves up an array of all categories",
+        "queries": [],
+        "exampleResponse": {
+            "categories": [
+                {
+                "category_id": 1,
+                "category_name": "Litter Picking",
+                "category_img": "https://sustainability.leeds.ac.uk/wp-content/uploads/sites/106/2024/03/LUJH-63.jpg"
+                },
+                {
+                "category_id": 2,
+                "category_name": "Gardening",
+                "category_img": "https://cdn.hosted-assets.com/nourishingneighbors/ul/q_auto/9DEY071R/c89e77/c89e77-iStock-1364679535.jpg"
+                },
+                {
+                "category_id": 3,
+                "category_name": "Cleaning",
+                "category_img": "https://www.southernliving.com/thmb/Bmo7YUcJC4EORS-pdWD93mvxeZk=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-12174006911-4ed8b844da3e452eac177ab2e7962d3d.jpg"
+                },
+                {
+                "category_id": 4,
+                "category_name": "Painting",
+                "category_img": "https://now.uiowa.edu/sites/now.uiowa.edu/files/2023-04/Mike-Stenerson-1.jpg"
+                },
+                {
+                "category_id": 5,
+                "category_name": "Food bank",
+                "category_img": "https://www.bigissue.com/wp-content/uploads/2022/09/P1190298-scaled.jpg"
+                },
+                {
+                "category_id": 6,
+                "category_name": "Group run",
+                "category_img": "https://www.goodgym.org/assets/home/group-run@2x-97b58fa1e949c310dffb9170921126afb2f64c3090127bde8e154563e705a7a4.jpg"
+                },
+                {
+                "category_id": 7,
+                "category_name": "Social",
+                "category_img": "https://scontent-lhr8-2.xx.fbcdn.net/v/t39.30808-6/480494854_1027327399428248_5071426012996742058_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=iWbBLY1sx7MQ7kNvgFfkwYl&_nc_oc=AdlEJMFlbBCeDh2krNHSbIfJKC1VRVMruzq0X7TMiWAbwGqtg7YkwYZrCKvwefaBfMxxprCJBxsd81u3G8vXJEOS&_nc_zt=23&_nc_ht=scontent-lhr8-2.xx&_nc_gid=Mz9EZdAYHZ1eayZtZKFiow&oh=00_AYHOzilGal5jnrtEFLj0qq1s4GnxZv3h44rmAbigyHLcpg&oe=67EA5D5C"
+                }
+            ]
+        }
+    },
+    "GET /api/events" : {
+        "description": "serves up a list of all events sorted by date ascending. Events can be sorted by category or city",
+        "queries": ["date","city","category"],
+        "exampleResponse": {
+            "events": [{
+            "event_id": 7,
+            "city_id": 1,
+            "title": "School Playground Cleanup",
+            "category_id": 3,
+            "date": "2024-12-10T00:00:00.000Z",
+            "postcode": "LS9 7AP",
+            "description": "Assist in cleaning and maintaining the local school's playground.",
+            "city_name": "Leeds",
+            "category_name": "Cleaning",
+            "category_img": "https://www.southernliving.com/thmb/Bmo7YUcJC4EORS-pdWD93mvxeZk=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-12174006911-4ed8b844da3e452eac177ab2e7962d3d.jpg",
+            "attendees": [
+                {
+                "avatar": "https://upload.wikimedia.org/wikipedia/en/0/02/Homer_Simpson_2006.png",
+                "user_id": 1,
+                "user_name": "Homer Simpson"
+                },
+                {
+                "avatar": "https://upload.wikimedia.org/wikipedia/en/0/0d/Chief_Wiggum.png",
+                "user_id": 10,
+                "user_name": "Chief Wiggum"
+                },
+                {
+                "avatar": "https://upload.wikimedia.org/wikipedia/en/3/3a/Krustytheclown.png",
+                "user_id": 8,
+                "user_name": "Krusty the Clown"
+                },
+                {
+                "avatar": "https://upload.wikimedia.org/wikipedia/en/8/84/Ned_Flanders.png",
+                "user_id": 6,
+                "user_name": "Ned Flanders"
+                },
+                {
+                "avatar": "https://upload.wikimedia.org/wikipedia/en/e/ec/Lisa_Simpson.png",
+                "user_id": 4,
+                "user_name": "Lisa Simpson"
+                }
+            ]
+            },
+            {
+            "event_id": 1,
+            "city_id": 1,
+            "title": "Community Garden Restoration",
+            "category_id": 2,
+            "date": "2024-12-15T00:00:00.000Z",
+            "postcode": "LS1 4HT",
+            "description": "Help us restore a local community garden by planting flowers and clearing overgrown areas.",
+            "city_name": "Leeds",
+            "category_name": "Gardening",
+            "category_img": "https://cdn.hosted-assets.com/nourishingneighbors/ul/q_auto/9DEY071R/c89e77/c89e77-iStock-1364679535.jpg",
+            "attendees": [
+                {
+                "avatar": "https://upload.wikimedia.org/wikipedia/en/0/0b/Marge_Simpson.png",
+                "user_id": 2,
+                "user_name": "Marge Simpson"
+                },
+                {
+                "avatar": "https://upload.wikimedia.org/wikipedia/en/0/0d/Chief_Wiggum.png",
+                "user_id": 10,
+                "user_name": "Chief Wiggum"
+                },
+                {
+                "avatar": "https://upload.wikimedia.org/wikipedia/en/3/3a/Krustytheclown.png",
+                "user_id": 8,
+                "user_name": "Krusty the Clown"
+                },
+                {
+                "avatar": "https://upload.wikimedia.org/wikipedia/en/5/56/Mr_Burns.png",
+                "user_id": 7,
+                "user_name": "Mr. Burns"
+                },
+                {
+                "avatar": "https://upload.wikimedia.org/wikipedia/en/9/9d/Maggie_Simpson.png",
+                "user_id": 5,
+                "user_name": "Maggie Simpson"
+                },
+                {
+                "avatar": "https://upload.wikimedia.org/wikipedia/en/a/aa/Bart_Simpson_200px.png",
+                "user_id": 3,
+                "user_name": "Bart Simpson"
+                }
+            ]
+            }]
+        }
+
+    },
+    "GET /api/events/:event_id" : {
+        "description" : "serves an event when provided with a valid event_id",
+        "queries": [],
+        "exampleResponse" : {
+            "event": {
+                "event_id": 1,
+                "city_id": 1,
+                "title": "Community Garden Restoration",
+                "category_id": 2,
+                "date": "2024-12-15T00:00:00.000Z",
+                "postcode": "LS1 4HT",
+                "description": "Help us restore a local community garden by planting flowers and clearing overgrown areas."
+            }
+        }
+    },
+    "POST /api/events": {
+        "description" : "posts a new event to the events list",
+        "queries" : [],
+        "exampleResponse" : {
+            "newEvent" : { "city_id": 2, 
+            "title": "Litter picking at the community garden", 
+            "category_id": 1, "date": "2025-04-17", 
+            "postcode": "LS5 3JF", 
+            "description": "Another fun litter picking excursion at our local community garden, there will be pizza afterwards." }
+        }
+    },
+    "POST /api/events/:event_id/attendees" : {
+        "description" : "posts an attendee to an event, provided they are not already attending",
+        "queries" : [],
+        "exampleResponse" : { "msg": "Attendee added successfully" }
+    },
+    "DELETE /api/events/:event_id/attendees" : {
+        "description" : "deletes attendee from event, provided they are not already absent from the event",
+        "queries" : [],
+        "exampleResponse" : "No content"
+    },
+    "DELETE /api/events/:event_id" : {
+        "description" : "deletes an event when provided with an event_id",
+        "queries" : [],
+        "exampleResponse" : "No content"
+    },
+    "GET /api/users": {
+        "description" : "serves up a list of all users",
+        "queries" : [],
+        "exampleResponse" : {
+            "users" : [
+                {
+                "user_id": 1,
+                "user_name": "Homer Simpson",
+                "avatar": "https://upload.wikimedia.org/wikipedia/en/0/02/Homer_Simpson_2006.png",
+                "email": "homer.simpson@example.com",
+                "password": "donuts123",
+                "is_admin": true
+                },
+                {
+                "user_id": 2,
+                "user_name": "Marge Simpson",
+                "avatar": "https://upload.wikimedia.org/wikipedia/en/0/0b/Marge_Simpson.png",
+                "email": "marge.simpson@example.com",
+                "password": "bluehair456",
+                "is_admin": true
+                },
+                {
+                "user_id": 3,
+                "user_name": "Bart Simpson",
+                "avatar": "https://upload.wikimedia.org/wikipedia/en/a/aa/Bart_Simpson_200px.png",
+                "email": "bart.simpson@example.com",
+                "password": "eatmypants",
+                "is_admin": false
+                },
+                {
+                "user_id": 4,
+                "user_name": "Lisa Simpson",
+                "avatar": "https://upload.wikimedia.org/wikipedia/en/e/ec/Lisa_Simpson.png",
+                "email": "lisa.simpson@example.com",
+                "password": "saxophone789",
+                "is_admin": false
+                },
+                {
+                "user_id": 5,
+                "user_name": "Maggie Simpson",
+                "avatar": "https://upload.wikimedia.org/wikipedia/en/9/9d/Maggie_Simpson.png",
+                "email": "maggie.simpson@example.com",
+                "password": "pacifier321",
+                "is_admin": false
+                },
+                {
+                "user_id": 6,
+                "user_name": "Ned Flanders",
+                "avatar": "https://upload.wikimedia.org/wikipedia/en/8/84/Ned_Flanders.png",
+                "email": "ned.flanders@example.com",
+                "password": "hallelujah777",
+                "is_admin": false
+                },
+                {
+                "user_id": 7,
+                "user_name": "Mr. Burns",
+                "avatar": "https://upload.wikimedia.org/wikipedia/en/5/56/Mr_Burns.png",
+                "email": "mr.burns@example.com",
+                "password": "excellent123",
+                "is_admin": false
+                },
+                {
+                "user_id": 8,
+                "user_name": "Krusty the Clown",
+                "avatar": "https://upload.wikimedia.org/wikipedia/en/3/3a/Krustytheclown.png",
+                "email": "krusty.clown@example.com",
+                "password": "clownlife456",
+                "is_admin": false
+                },
+                {
+                "user_id": 9,
+                "user_name": "Milhouse Van Houten",
+                "avatar": "https://upload.wikimedia.org/wikipedia/en/6/6f/Milhouse_Van_Houten.png",
+                "email": "milhouse.vh@example.com",
+                "password": "radical789",
+                "is_admin": false
+                },
+                {
+                "user_id": 10,
+                "user_name": "Chief Wiggum",
+                "avatar": "https://upload.wikimedia.org/wikipedia/en/0/0d/Chief_Wiggum.png",
+                "email": "chief.wiggum@example.com",
+                "password": "donutsforever",
+                "is_admin": false
+                }
+            ]
+        }
+    },
+    "GET /api/users/:user_id" : {
+        "description" : "serves a single user when provided with a user_id",
+        "queries" : [],
+        "exampleResponse" : [{
+            "user_id": 7,
+            "user_name": "Mr. Burns",
+            "avatar": "https://upload.wikimedia.org/wikipedia/en/5/56/Mr_Burns.png",
+            "email": "mr.burns@example.com",
+            "password": "excellent123",
+            "is_admin": false
+            }]
+    },
+    "POST /api/users" : {
+        "description" : "Posts a new user",
+        "queries" : [],
+        "exampleResponse" : {
+            "newUser" : {
+                "user_id": 11,
+                "user_name": "Apu Nahasapeemapetilon",
+                "avatar": "https://static.wikia.nocookie.net/simpsons/images/6/6e/Profile_-_Apu_Nahasapeemapetilon.png/revision/latest?cb=20250307004048",
+                "email": "apu.nahasa.com",
+                "password": "thankyoucomeagain",
+                "is_admin": false
+            }
+        }
+    },
+    "DELETE /api/users/:user_id" : {
+        "description" : "deletes a user when provided with an user_id",
+        "queries" : [],
+        "exampleResponse" : "No content"
+    }
+}

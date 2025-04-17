@@ -25,6 +25,6 @@ module.exports = [
     },
     {
         category_name: "Social",
-        category_img: "https://scontent-lhr8-2.xx.fbcdn.net/v/t39.30808-6/480494854_1027327399428248_5071426012996742058_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=iWbBLY1sx7MQ7kNvgFfkwYl&_nc_oc=AdlEJMFlbBCeDh2krNHSbIfJKC1VRVMruzq0X7TMiWAbwGqtg7YkwYZrCKvwefaBfMxxprCJBxsd81u3G8vXJEOS&_nc_zt=23&_nc_ht=scontent-lhr8-2.xx&_nc_gid=Mz9EZdAYHZ1eayZtZKFiow&oh=00_AYHOzilGal5jnrtEFLj0qq1s4GnxZv3h44rmAbigyHLcpg&oe=67EA5D5C"
+        category_img: "https://i0.wp.com/readysethostblog.com/wp-content/uploads/2021/10/pexels-askar-abayev-5638751-2.jpg?w=2048&ssl=1"
     }
 ];

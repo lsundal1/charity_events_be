@@ -3,15 +3,15 @@ const { fetchUser } = require("../models/users.model")
 
 exports.getEvents = (req, res, next) => {
 
-    const { sort_by = 'date', order = 'ASC', city, category } = req.query
+    const { order = 'ASC', city, category } = req.query
 
     if(city || category){
-        fetchEvents(sort_by, order, city, category).then((events) => {
+        fetchEvents(order, city, category).then((events) => {
             res.status(200).send({ events })
         })
         .catch(next)
     } else {
-        fetchEvents(sort_by, order).then((events) => {
+        fetchEvents(order).then((events) => {
             res.status(200).send({ events })
         })
         .catch(next)

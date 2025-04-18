@@ -1,12 +1,10 @@
 const db = require("../db/connection");
 
-exports.fetchEvents = (sort_by, order, city, category) => {
-
-    const validColumns = ['date']
+exports.fetchEvents = (order, city, category) => {
 
     const validOrder = ['ASC', 'DESC']
 
-    if(!validColumns.includes(sort_by) || !validOrder.includes(order.toUpperCase())) {
+    if(!validOrder.includes(order.toUpperCase())) {
         return Promise.reject({ status: 400, msg: 'bad request'})
     }
 
@@ -56,7 +54,7 @@ exports.fetchEvents = (sort_by, order, city, category) => {
         cities.city_name, 
         categories.category_name, 
         categories.category_img
-    ORDER BY ${sort_by} ${order.toUpperCase()};
+    ORDER BY date ${order.toUpperCase()};
     `;
 
     return db.query(queryStr, queryParams).then(({ rows }) => {

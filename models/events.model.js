@@ -2,7 +2,7 @@ const db = require("../db/connection");
 
 exports.fetchEvents = (sort_by, order, city, category) => {
 
-    const validColumns = ['date', 'city']
+    const validColumns = ['date']
 
     const validOrder = ['ASC', 'DESC']
 
@@ -60,9 +60,6 @@ exports.fetchEvents = (sort_by, order, city, category) => {
     `;
 
     return db.query(queryStr, queryParams).then(({ rows }) => {
-        if (rows.length === 0) {
-            return Promise.reject({ status: 404, msg: 'Not Found' });
-        }
         return rows;
     })
 };

@@ -26,10 +26,34 @@ exports.fetchUser = (user_id) => {
 exports.fetchEventsByUserId = (user_id) => {
 
     const query = `
-    SELECT events.event_id, events.title, events.date 
-    FROM events 
-    JOIN event_attendees ON events.event_id = event_attendees.event_id
-    WHERE event_attendees.user_id = $1;`
+    SELECT 
+        events.*,
+        cities.city_name,
+        categories.category_name,
+        categories.category_img,
+        COALESCE(
+            JSON_AGG(
+                DISTINCT JSONB_BUILD_OBJECT(
+                    'user_id', users.user_id,
+                    'user_name', users.user_name,
+                    'avatar', users.avatar
+                )
+            ) FILTER (WHERE users.user_id IS NOT NULL),
+            '[]'
+        ) AS attendees
+    FROM events
+    JOIN cities ON events.city_id = cities.city_id
+    JOIN categories ON events.category_id = categories.category_id
+    JOIN event_attendees AS user_events ON events.event_id = user_events.event_id
+    LEFT JOIN event_attendees ON events.event_id = event_attendees.event_id
+    LEFT JOIN users ON event_attendees.user_id = users.user_id
+    WHERE user_events.user_id = $1
+    GROUP BY 
+        events.event_id, 
+        cities.city_name, 
+        categories.category_name, 
+        categories.category_img;
+    `;  
 
     return db.query(query, [user_id]).then(({rows}) => {
         return rows;

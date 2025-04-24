@@ -52,7 +52,8 @@ const seed = ({ categoriesData, citiesData, eventsData, usersData, attendeesData
                     city_id INT REFERENCES cities(city_id) ON DELETE CASCADE,
                     title VARCHAR NOT NULL,
                     category_id INT NOT NULL REFERENCES categories(category_id),
-                    date DATE NOT NULL,
+                    start_time DATE NOT NULL,
+                    end_time DATE NOT NULL,
                     postcode VARCHAR(10),
                     description VARCHAR(150)
                 );`);
@@ -98,7 +99,7 @@ const seed = ({ categoriesData, citiesData, eventsData, usersData, attendeesData
         .then(() => {
 
             const insertEventsQueryStr = format (
-                'INSERT INTO events (city_id, title, category_id, date, postcode, description) VALUES %L RETURNING event_id;', eventsData.map(({ city_id, title, category_id, date, postcode, description }) => [city_id, title, category_id, date, postcode, description])
+                'INSERT INTO events (city_id, title, category_id, start_time, end_time, postcode, description) VALUES %L RETURNING event_id;', eventsData.map(({ city_id, title, category_id, start_time, end_time, postcode, description }) => [city_id, title, category_id, start_time, end_time, postcode, description])
             );
 
             return db.query(insertEventsQueryStr)

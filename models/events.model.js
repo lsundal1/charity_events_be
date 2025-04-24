@@ -54,7 +54,7 @@ exports.fetchEvents = (order, city, category) => {
         cities.city_name, 
         categories.category_name, 
         categories.category_img
-    ORDER BY date ${order.toUpperCase()};
+    ORDER BY start_time ${order.toUpperCase()};
     `;
 
     return db.query(queryStr, queryParams).then(({ rows }) => {
@@ -119,14 +119,14 @@ exports.fetchAttendeesByEventId = (event_id) => {
 
 exports.addEvent = (event) => {
 
-    const { city_id, title, category_id, date, postcode, description } = event
+    const { city_id, title, category_id, start_time, end_time, postcode, description } = event
 
     const query = `
-    INSERT INTO events (city_id, title, category_id, date, postcode, description)
-    VALUES ($1, $2, $3, $4, $5, $6)
+    INSERT INTO events (city_id, title, category_id, start_time, end_time, postcode, description)
+    VALUES ($1, $2, $3, $4, $5, $6, $7)
     RETURNING *;`
 
-    return db.query(query, [city_id, title, category_id, date, postcode, description]).then(({rows}) => {
+    return db.query(query, [city_id, title, category_id, start_time, end_time, postcode, description]).then(({rows}) => {
         return rows[0]
     })
 }

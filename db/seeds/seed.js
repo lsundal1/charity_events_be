@@ -52,8 +52,8 @@ const seed = ({ categoriesData, citiesData, eventsData, usersData, attendeesData
                     city_id INT REFERENCES cities(city_id) ON DELETE CASCADE,
                     title VARCHAR NOT NULL,
                     category_id INT NOT NULL REFERENCES categories(category_id),
-                    start_time DATE NOT NULL,
-                    end_time DATE NOT NULL,
+                    start_time TIMESTAMP NOT NULL,
+                    end_time TIMESTAMP NOT NULL,
                     postcode VARCHAR(10),
                     description VARCHAR(150)
                 );`);

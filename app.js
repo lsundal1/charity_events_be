@@ -9,6 +9,10 @@ app.use(cors());
 
 app.use(express.json());
 
+app.get("/", (req, res) => {
+    res.redirect("/api");
+});
+
 app.use("/api", apiRouter);
 
 app.get("/api", (req, res) => {

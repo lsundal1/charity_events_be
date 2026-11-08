@@ -15,5 +15,9 @@ exports.customErrorHandler = (err, req, res, next) => {
 }
 
 exports.serverErrorHandler = (err, req, res, next) => {
+    console.error("Unhandled API error:", {
+        code: err.code,
+        message: err.message,
+    });
     res.status(500).send({msg: "Internal server error"})
 }
